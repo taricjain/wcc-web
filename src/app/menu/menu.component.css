@@ -1,0 +1,6 @@
+.ui.special.cards {
+    padding-top: 5em;
+    padding-left: 8em;
+    padding-right: 8em;
+    overflow: auto;
+}

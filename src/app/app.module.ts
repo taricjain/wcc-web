@@ -11,7 +11,6 @@ import { DashboardComponent } from './dashboard/dashboard.component';
 import { OrderComponent } from './order/order.component';
 import { AppHeaderComponent } from './app-header/app-header.component';
 import { AppFooterComponent } from './app-footer/app-footer.component';
-import { AppContentComponent } from './app-content/app-content.component';
 
 
 @NgModule({
@@ -23,8 +22,7 @@ import { AppContentComponent } from './app-content/app-content.component';
     DashboardComponent,
     OrderComponent,
     AppHeaderComponent,
-    AppFooterComponent,
-    AppContentComponent
+    AppFooterComponent
   ],
   imports: [
     BrowserModule,
