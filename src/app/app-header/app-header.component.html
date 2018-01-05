@@ -1,0 +1,16 @@
+<div class="ui fixed stackable inverted menu">
+    <a href="/" class="header item">
+        <img class="logo" src="assets/images/logo.png">
+            {{ title }}
+    </a>
+    <a routerLink="/about" class="item">About</a>
+    <a routerLink="/dashboard" class="item">Dashboard</a>
+    <a routerLink="/menu" class="item">Menu</a>
+    <a routerLink="/order" class="item">Order</a>
+    <div class="right menu">
+        <div class="item">
+            <a routerLink="/login" class="ui primary button">Log In</a>
+        </div>
+    </div>
+</div>
+<router-outlet></router-outlet>
