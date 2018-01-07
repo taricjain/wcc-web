@@ -24,6 +24,7 @@
     "core-js": "^2.4.1",
     "jquery": "^3.2.1",
     "rxjs": "^5.5.2",
+    "semantic-ui-card": "^2.2.12",
     "semantic-ui-css": "^2.2.12",
     "zone.js": "^0.8.14"
   },

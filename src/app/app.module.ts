@@ -10,7 +10,6 @@ import { AboutComponent } from './about/about.component';
 import { DashboardComponent } from './dashboard/dashboard.component';
 import { OrderComponent } from './order/order.component';
 import { AppHeaderComponent } from './app-header/app-header.component';
-import { AppFooterComponent } from './app-footer/app-footer.component';
 
 
 @NgModule({
@@ -21,8 +20,7 @@ import { AppFooterComponent } from './app-footer/app-footer.component';
     AboutComponent,
     DashboardComponent,
     OrderComponent,
-    AppHeaderComponent,
-    AppFooterComponent
+    AppHeaderComponent
   ],
   imports: [
     BrowserModule,
