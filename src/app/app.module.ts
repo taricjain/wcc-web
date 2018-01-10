@@ -10,7 +10,6 @@ import { MenuComponent } from './menu/menu.component';
 import { LoginComponent } from './login/login.component';
 import { AboutComponent } from './about/about.component';
 import { DashboardComponent } from './dashboard/dashboard.component';
-import { OrderComponent } from './order/order.component';
 import { AppHeaderComponent } from './app-header/app-header.component';
 
 
@@ -21,7 +20,6 @@ import { AppHeaderComponent } from './app-header/app-header.component';
     LoginComponent,
     AboutComponent,
     DashboardComponent,
-    OrderComponent,
     AppHeaderComponent
   ],
   imports: [

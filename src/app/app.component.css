@@ -7,6 +7,6 @@
 }
 .ui.footer.segment {
     padding-top: 3em;
-    position: sticky;
+    position: static;
     width: 100%;
 }
