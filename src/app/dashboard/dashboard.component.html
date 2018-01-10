@@ -1,0 +1,25 @@
+<div class="ui special cards" (click)="hoverDim()" >
+    <span class="text" *ngIf="productList === undefined">Loading...</span>
+    <div class="main">
+        <div class="card" *ngFor="let product of productList">
+            <div class="blurring dimmable image" >
+                <div class="ui dimmer">
+                <div class="content">
+                    <div class="center">
+                    <div class="ui inverted button inactive">Price: ${{ product.price / 100.0 | number }}</div>
+                    </div>
+                </div>
+                </div>
+                <img src="assets/images/logo.png">
+            </div>
+            <div class="content">
+                <a class="header">{{ product.name }}</a>
+            </div>
+            <br />
+            <div class="extra content">
+                <span class="list-buy">${{ product.price / 100.0 | number }}</span> <br /><br />
+                <button class="ui button btn-list-buy" (click)="buyProduct(product)">Buy</button>
+            </div>
+        </div>
+    </div>
+</div>
