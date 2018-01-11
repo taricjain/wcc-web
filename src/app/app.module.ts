@@ -11,6 +11,7 @@ import { LoginComponent } from './login/login.component';
 import { AboutComponent } from './about/about.component';
 import { DashboardComponent } from './dashboard/dashboard.component';
 import { AppHeaderComponent } from './app-header/app-header.component';
+import { AdminPageComponent } from './admin-page/admin-page.component';
 
 
 @NgModule({
@@ -20,7 +21,8 @@ import { AppHeaderComponent } from './app-header/app-header.component';
     LoginComponent,
     AboutComponent,
     DashboardComponent,
-    AppHeaderComponent
+    AppHeaderComponent,
+    AdminPageComponent
   ],
   imports: [
     BrowserModule,
