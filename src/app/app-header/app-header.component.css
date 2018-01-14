@@ -39,6 +39,7 @@
     }
     .secondary.pointing.menu .toc.item {
       display: block;
+      background: rgba(3, 36, 37, 0);
     }
     .masthead.segment {
       min-height: 10px;
