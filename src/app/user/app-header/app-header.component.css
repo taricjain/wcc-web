@@ -13,6 +13,10 @@
   width: 100%;
 }
 
+.ui.left.sidebar, .ui.right.sidebar {
+  background: rgb(3, 36, 77);
+}
+
 .hidden.menu {
     display: none;
   }
