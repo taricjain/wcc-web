@@ -2,11 +2,23 @@
     margin-right: 1em;
 }
 
+.ui.menu .item {
+  color: white;
+}
+.ui.secondary.pointing.menu .header.item {
+  color: white !important;
+}
+.ui.menu>.ui.container {
+  background: rgb(3, 36, 77);
+  width: 100%;
+}
+
 .hidden.menu {
     display: none;
   }
   .masthead.segment {
     min-height: 10px;
+    background: rgb(3, 36, 77);
   }
   .masthead .logo.item img {
     margin-right: 1em;
@@ -27,9 +39,12 @@
   .footer.segment {
     padding: 5em 0em;
   }
-
   .secondary.pointing.menu .toc.item {
     display: none;
+  }
+
+  .ui.menu.ui.container {
+    background: rgb(3, 36, 77);
   }
 
   @media only screen and (max-width: 700px) {
@@ -39,7 +54,6 @@
     }
     .secondary.pointing.menu .toc.item {
       display: block;
-      background: rgba(3, 36, 37, 0);
     }
     .masthead.segment {
       min-height: 10px;
@@ -51,5 +65,8 @@
     .masthead h2 {
       margin-top: 0.5em;
       font-size: 1.5em;
+    }
+    .ui.menu.ui.container {
+      background: rgb(3, 36, 77);
     }
 }
