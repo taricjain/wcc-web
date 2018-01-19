@@ -4,9 +4,9 @@ import { RouterModule, Routes } from '@angular/router';
 import { DashboardComponent } from './user/dashboard/dashboard.component';
 
 export const routes: Routes = [
-    { path: '', component: DashboardComponent, pathMatch: 'full' },
-    { path: 'user', loadChildren: './user/user.module#UserModule' },
-
+  { path: '', component: DashboardComponent },
+  { path: 'user', loadChildren: './user/user.module#UserModule' },
+  { path: 'admin', loadChildren: './admin/admin.module#AdminModule' }
 ];
 
 @NgModule({
