@@ -1,12 +1,12 @@
 <!-- Fixed menu while scrolling -->
 <div class="ui large top fixed hidden menu">
     <div class="ui container">
-        <a routerLink="/user/dashboard" class="item">Home</a>
         <a routerLink="/user/about" class="item">About</a>
+        <a routerLink="/user/dashboard" class="item">Home</a>
         <a routerLink="/user/menu" class="item">Menu</a>
       <div class="right menu">
         <div class="item">
-          <a routerLink="/user/login" class="ui button">Log in</a>
+          <a routerLink="/user/login" class="ui button">Login</a>
         </div>
       </div>
     </div>
@@ -14,12 +14,12 @@
   
   <!-- Sidebar Menu -->
   <div class="ui vertical sidebar menu">
-        <a href="/user/dashboard" class="header item">
-            <img class="logo" src="assets/images/favicon.ico">
-                {{ title }}
+        <a routerLink="/user/dashboard" class="header item">
+          <img class="logo" src="assets/images/favicon.ico">
+            {{ title }}
         </a>
-        <a routerLink="/user/dashboard" class="item">Home</a>
         <a routerLink="/user/about" class="item">About</a>
+        <a routerLink="/user/dashboard" class="item">Home</a>
         <a routerLink="/user/menu" class="item">Menu</a>
         <a routerLink="/user/login" class="item">Login</a>
   </div>
@@ -34,14 +34,14 @@
           <i class="sidebar icon"></i>
           {{ title }}
         </a>
-        <a href="/user/dashboard" class="header item">
+        <a routerLink="/user/dashboard" class="header item">
           {{ title }}
         </a>
-        <a routerLink="/user/dashboard" class="item">Home</a>
         <a routerLink="/user/about" class="item">About</a>
+        <a routerLink="/user/dashboard" class="item">Home</a>
         <a routerLink="/user/menu" class="item">Menu</a>
         <div class="right item">
-          <a routerLink="/user/login" class="ui inverted button">Log in</a>
+          <a routerLink="/user/login" class="ui inverted button">Login</a>
         </div>
       </div>
     </div>

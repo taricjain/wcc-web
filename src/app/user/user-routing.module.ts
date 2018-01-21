@@ -4,14 +4,13 @@ import { DashboardComponent } from './dashboard/dashboard.component';
 import { AboutComponent } from './about/about.component';
 import { LoginComponent } from './login/login.component';
 import { MenuComponent } from './menu/menu.component';
-import { componentFactoryName } from '@angular/compiler';
 
 export const routes: Routes = [
   { path: '', component: DashboardComponent },
   { path: 'about', component: AboutComponent },
   { path: 'login', component: LoginComponent },
   { path: 'menu', component: MenuComponent },
-  {path: 'dashboard', component: DashboardComponent }
+  { path: 'dashboard', component: DashboardComponent }
 ];
 
 @NgModule({
