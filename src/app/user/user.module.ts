@@ -8,6 +8,7 @@ import { DashboardComponent } from './dashboard/dashboard.component';
 import { LoginComponent } from './login/login.component';
 import { MenuComponent } from './menu/menu.component';
 import { AppComponent } from '../../app/app.component';
+import { CheckoutComponent } from './checkout/checkout.component';
 
 @NgModule({
   imports: [
@@ -20,7 +21,8 @@ import { AppComponent } from '../../app/app.component';
     DashboardComponent, 
     LoginComponent, 
     MenuComponent,
-    AppComponent
+    AppComponent,
+    CheckoutComponent
   ]
 })
 export class UserModule { }
