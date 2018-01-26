@@ -1,5 +1,6 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
 import { UserRoutingModule } from './user-routing.module';
 import { AboutComponent } from './about/about.component';
@@ -13,7 +14,8 @@ import { CheckoutComponent } from './checkout/checkout.component';
 @NgModule({
   imports: [
     CommonModule,
-    UserRoutingModule
+    UserRoutingModule,
+    FormsModule
   ],
   declarations: [
     AboutComponent, 

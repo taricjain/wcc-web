@@ -33,7 +33,7 @@ export class MenuComponent implements OnInit {
     }
   
     buyProduct(product: Object) {
-      this.router.navigate(["/menu"]);
+      this.router.navigate(["/user/checkout", product['id']]);
     }
   }
   

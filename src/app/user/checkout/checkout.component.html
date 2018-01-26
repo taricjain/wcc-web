@@ -1,3 +1,48 @@
-<p>
-  checkout works!
-</p>
+<form>
+
+  <h3>Checkout</h3>
+
+  <input type="text" name="full_name" 
+    placeholder="Full Name" 
+    value="{{ checkout.user.fullName }}"
+    [(ngModel)]="checkout.user.fullName"
+  /> 
+  
+  <br />
+  <br />
+
+  <input type="email" name="email"
+    placeholder="Email"
+    value="{{ checkout.user.email }}" 
+    [(ngModel)]="checkout.user.email"
+  />
+
+  <br />
+  <br />
+
+  <input type="text" name="mobile_number" 
+    placeholder="Mobile Number"
+    value="{{ checkout.user.mobileNumber }}"
+    [(ngModel)]="checkout.user.mobileNumber"
+  />
+
+  <br />
+  <br />
+
+  <input type="text" name="special_request"
+    placeholder="Any special requests?"
+    value="{{ checkout.specialRequest }}"
+    [(ngModel)]="checkout.specialRequest"
+  />
+
+  <br>
+  <br>
+
+  <button 
+    type="button" 
+    class="ui green button"
+    (click)="submitOrder()">
+      Proceed to Payment
+  </button>
+
+</form>
