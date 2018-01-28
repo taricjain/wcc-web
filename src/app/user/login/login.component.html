@@ -1,7 +1,7 @@
 <div class="ui centered attached message">
   <div class="header" style="text-align: center;">
-    <h1>Welcome</h1>
-    <h3>to World Cup Coffee Company!</h3>
+    <h1>Welcome to</h1>
+    <h3>World Cup Coffee Company!</h3>
   </div>
   <div class="ui centered special cards">
     <div class="card">
@@ -20,8 +20,17 @@
             <label for="terms">Remember Me!</label>
           </div>
         </div>
-        <div class="ui blue submit button">Login</div>
-        <div class="ui submit button">Signup</div>
+        <div class="ui three centered column grid">
+          <div class="row">
+              <div class="ui blue submit button">Login</div>
+          </div>
+          <div class="row">
+              <div class="ui blue submit button" (click)="login()"><i class="facebook square icon"></i>Facebook</div>
+          </div>
+          <div class="row">
+              <div class="ui blue submit button"><i class="google icon"></i>Google</div>
+          </div>
+        </div>
       </form>
     </div>
   </div>

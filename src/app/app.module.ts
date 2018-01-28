@@ -8,7 +8,7 @@ import { AppComponent } from './app.component';
 import { AppRoutingModule } from './/app-routing.module';
 import { UserModule } from './user/user.module';
 import { AdminModule } from './admin/admin.module';
-
+import { FacebookModule } from 'ngx-facebook';
 
 @NgModule({
   declarations: [],
@@ -18,7 +18,8 @@ import { AdminModule } from './admin/admin.module';
     HttpModule,
     HttpClientModule,
     UserModule,
-    AdminModule
+    AdminModule,
+    FacebookModule.forRoot()
   ],
   providers: [],
   bootstrap: [AppComponent]
