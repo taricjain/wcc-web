@@ -1,6 +1,7 @@
 .ui.special.cards {
     padding: 3em 8em 3em 8em;
     overflow: auto;
+    margin: auto;
 }
 .list-buy {
     padding-top: 5em;  
@@ -10,6 +11,7 @@
     .ui.special.cards {
         padding: 5em 5em 5em 5em;
         overflow: auto;
+        margin: auto;
         text-align: center;
     }
 }
