@@ -26,8 +26,9 @@ export class CheckoutComponent implements OnInit {
   submitOrder() {
     // Submit order to backend.
     console.log(this.checkout);
-    this.http.post("http://wccapi.ml:8080/order/new", this.checkout).subscribe(response => {
+    this.http.post("http://localhost:8080/order/new", this.checkout).subscribe(response => {
       console.log('uploaded.');
+      this.router.navigateByUrl("/");
     },
   err => {
     console.log('Error.');
