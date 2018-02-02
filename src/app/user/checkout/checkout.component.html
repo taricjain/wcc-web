@@ -27,11 +27,12 @@
             [(ngModel)]="checkout.user.mobileNumber">
         </div>
         <div class="field">
-          <label>Please tell us about anyone special requests you have!</label>
+          <label>Please tell us about any special requests you have!</label>
           <input type="text" name="special_request"
             placeholder="Any special requests?"
             value="{{ checkout.specialRequest }}"
-            [(ngModel)]="checkout.specialRequest">
+            [(ngModel)]="checkout.specialRequest"
+            autocomplete="off">
         </div>
         <div class="ui three centered column grid">
           <div class="row">
@@ -40,6 +41,7 @@
             </div>
           </div>
         </div>
+        <div *ngIf="submitOrder === true">Order submitted successfully.</div>
       </form>
     </div>
   </div>
