@@ -2,7 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import { Router } from '@angular/router';
 import { Checkout } from '../../models';
-import { HttpClient } from '@angular/common/http';
+import { HttpClient, HttpHeaders } from '@angular/common/http';
 
 @Component({
   selector: 'app-checkout',
@@ -25,9 +25,13 @@ export class CheckoutComponent implements OnInit {
 
   submitOrder() {
     // Submit order to backend.
-    var payload: string = JSON.stringify(this.checkout);
-    this.http.post("http://wccapi.ml:8080/order/new", payload).subscribe((response) => {
-      this.router.navigateByUrl("/");
-    });
+    console.log(this.checkout);
+    this.http.post("http://wccapi.ml:8080/order/new", this.checkout).subscribe(response => {
+      console.log('uploaded.');
+    },
+  err => {
+    console.log('Error.');
+    this.router.navigateByUrl("/");
+  });
   }
 }
