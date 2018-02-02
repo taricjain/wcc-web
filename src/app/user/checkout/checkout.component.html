@@ -1,48 +1,46 @@
-<form>
-
-  <h3>Checkout</h3>
-
-  <input type="text" name="full_name" 
-    placeholder="Full Name" 
-    value="{{ checkout.user.fullName }}"
-    [(ngModel)]="checkout.user.fullName"
-  /> 
-  
-  <br />
-  <br />
-
-  <input type="email" name="email"
-    placeholder="Email"
-    value="{{ checkout.user.email }}" 
-    [(ngModel)]="checkout.user.email"
-  />
-
-  <br />
-  <br />
-
-  <input type="text" name="mobile_number" 
-    placeholder="Mobile Number"
-    value="{{ checkout.user.mobileNumber }}"
-    [(ngModel)]="checkout.user.mobileNumber"
-  />
-
-  <br />
-  <br />
-
-  <input type="text" name="special_request"
-    placeholder="Any special requests?"
-    value="{{ checkout.specialRequest }}"
-    [(ngModel)]="checkout.specialRequest"
-  />
-
-  <br>
-  <br>
-
-  <button 
-    type="button" 
-    class="ui green button"
-    (click)="submitOrder()">
-      Proceed to Payment
-  </button>
-
-</form>
+<div class="ui centered attached message">
+  <div class="header" style="text-align: center;">
+    <h1>Checkout</h1>
+  </div>
+  <div class="ui centered special cards">
+    <div class="card">
+      <form class="ui centered form attached segment">
+        <div class="field">
+          <label>Name</label>
+          <input type="text" name="full_name" 
+            placeholder="Full Name" 
+            value="{{ checkout.user.fullName }}"
+            [(ngModel)]="checkout.user.fullName">
+        </div>
+        <div class="field">
+          <label>Email</label>
+          <input type="email" name="email"
+          placeholder="Email"
+          value="{{ checkout.user.email }}" 
+          [(ngModel)]="checkout.user.email">
+        </div>
+        <div class="field">
+          <label>Mobile Number</label>
+          <input type="text" name="mobile_number" 
+            placeholder="Mobile Number"
+            value="{{ checkout.user.mobileNumber }}"
+            [(ngModel)]="checkout.user.mobileNumber">
+        </div>
+        <div class="field">
+          <label>Please tell us about anyone special requests you have!</label>
+          <input type="text" name="special_request"
+            placeholder="Any special requests?"
+            value="{{ checkout.specialRequest }}"
+            [(ngModel)]="checkout.specialRequest">
+        </div>
+        <div class="ui three centered column grid">
+          <div class="row">
+            <div class="ui blue submit button" (click)="submitOrder()">
+              Submit Order!
+            </div>
+          </div>
+        </div>
+      </form>
+    </div>
+  </div>
+</div>
