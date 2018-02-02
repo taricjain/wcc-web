@@ -22,7 +22,7 @@ export class MenuComponent implements OnInit {
     constructor(private router: Router, private http: HttpClient) { }
   
     ngOnInit() {
-      this.http.get("http://165.227.214.188:8080/order/product/").subscribe(data => {
+      this.http.get("http://wccapi.ml:8080/order/product/").subscribe(data => {
         if (this.productList === undefined || this.productList.length > 0) {
           this.productList = new Array<Object>();
         }
