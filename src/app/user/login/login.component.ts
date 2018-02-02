@@ -3,6 +3,7 @@ import { Router } from '@angular/router';
 import { Http } from '@angular/http';
 
 import { FacebookService, InitParams, LoginResponse, LoginOptions } from 'ngx-facebook';
+import { Response } from '@angular/http/src/static_response';
 var accessToken: string;
 
 @Component({
@@ -29,20 +30,33 @@ export class LoginComponent implements OnInit {
       scope: 'public_profile,user_friends,email,pages_show_list'
     };
     this.fb.login(loginOptions)
-      .then((response: LoginResponse) => accessToken = response.authResponse.accessToken)
-      .then((response) => console.log('Logged In', accessToken))
+      .then((res: LoginResponse) => { console.log('Logged in', res) })
+      .then((res) => this.getProfile())
+      .then((res) => this.getFriends())
       .catch((error: any) => console.error(error));
-      
-    this.fb.api('/me', 'get', function(response){
-      console.log('Successful login for: ' + response.name);
-      console.log(response);
-       document.getElementById('status').innerHTML =
-       'Thanks for logging in, ' + response.name + '!';
-       document.getElementById('username').nodeValue=response.name;
-       document.getElementById('user').nodeValue=response.id;
-       document.getElementById('email').nodeValue=response.email;
-    });
   }
 
+  /**
+   * Get the user's profile
+   */
+  getProfile() {
+    this.fb.api('/me', 'get', {'fields': 'name,email'})
+      .then((res: any) => {
+        console.log('Got the users profile', res);
+      })
+      .catch((error: any) => console.error(error));
+  }
+
+
+  /**
+   * Get the users friends
+   */
+  getFriends() {
+    this.fb.api('/me/friends', 'get')
+      .then((res: any) => {
+        console.log('Got the users friends', res);
+      })
+      .catch((error: any) => console.error(error));
+  }
   ngOnInit() {}
 }
