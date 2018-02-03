@@ -1,6 +1,10 @@
+<div *ngIf="productList === undefined">
+    <div class="ui active inverted dimmer">
+        <div class="ui masssive text loader">Loading menu ...</div>
+    </div>
+</div>
+
 <div class="ui special cards" (click)="hoverDim()" >
-  <span class="text" *ngIf="productList === undefined">Loading...</span>
-  
   <div class="card" *ngFor="let product of productList">
       <div class="blurring dimmable image" >
           <div class="ui dimmer">
@@ -16,5 +20,4 @@
           <a class="ui header" style="text-align: center;">{{ product.name }}</a>
       </div>
   </div>
-  
 </div>

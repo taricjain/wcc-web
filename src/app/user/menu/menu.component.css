@@ -6,7 +6,9 @@
 .list-buy {
     padding-top: 5em;  
 }
-
+.page-loader {
+    padding-top: 10px;
+}
 @media only screen and (max-width: 700px) {
     .ui.special.cards {
         padding: 5em 5em 5em 5em;
