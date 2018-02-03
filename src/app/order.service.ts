@@ -32,6 +32,16 @@ export class OrderService {
     .subscribe((data) => callback(null, data), (err) => callback(new Error("error getting order.")));
   }
   // updateOrder
+  updateOrder(order: Checkout, callback: CallbackInterface) {
+    var resourceString: string = environment.BASE_API_URL + "/order/" + order.id as string;
+    this.httpService.put(resourceString, order)
+    .subscribe((data) => callback(null, data), (error) => callback(new Error("error updating order.")));
+  }
   // deleteOrder
   // getMenu
+  getMenu(callback: CallbackInterface, limit?: number, offset?: number) {
+    var resourceString: string = environment.BASE_API_URL + "/order/product/";
+    this.httpService.get(resourceString)
+    .subscribe((data) => callback(null, data), (err) => callback(new Error("error getting menu")));
+  }
 }

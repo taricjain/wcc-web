@@ -10,6 +10,7 @@ enum OrderStatus {
 }
 
 export class Checkout {
+    id: number;
     product: Product;
     payment: Payment;
     user: User;
