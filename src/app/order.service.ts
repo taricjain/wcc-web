@@ -1,6 +1,7 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { Checkout, CallbackInterface } from './models';
+import { environment } from '../environments/environment';
 
 @Injectable()
 export class OrderService {
@@ -25,6 +26,11 @@ export class OrderService {
     callback(new Error("form validation failed"));
   }
   // retriveOrder
+  retriveOrder(orderId: number, callback: CallbackInterface) {
+    var resourceString: string = environment.BASE_API_URL + "/order/" + orderId as string;
+    this.httpService.get(resourceString)
+    .subscribe((data) => callback(null, data), (err) => callback(new Error("error getting order.")));
+  }
   // updateOrder
   // deleteOrder
 }
