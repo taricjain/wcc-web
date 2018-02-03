@@ -9,6 +9,7 @@ import { AppRoutingModule } from './/app-routing.module';
 import { UserModule } from './user/user.module';
 import { AdminModule } from './admin/admin.module';
 import { FacebookModule } from 'ngx-facebook';
+import { OrderService } from './order.service';
 
 @NgModule({
   declarations: [],
@@ -21,7 +22,9 @@ import { FacebookModule } from 'ngx-facebook';
     AdminModule,
     FacebookModule.forRoot()
   ],
-  providers: [],
+  providers: [
+    OrderService
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

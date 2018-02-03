@@ -44,3 +44,7 @@ export class User {
         this.id = 0;
     }
 }
+
+export interface CallbackInterface {
+    (error: Error, result?: any) : void;
+}

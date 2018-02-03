@@ -3,6 +3,7 @@ import { ActivatedRoute } from '@angular/router';
 import { Router } from '@angular/router';
 import { Checkout } from '../../models';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
+import { OrderService } from '../../order.service';
 
 @Component({
   selector: 'app-checkout',
@@ -13,7 +14,8 @@ export class CheckoutComponent implements OnInit {
   public order: Object;
   public productId: string;
   public checkout: Checkout;
-  constructor(private activeRouter: ActivatedRoute, private router: Router, private http: HttpClient) { 
+  public checkoutError: boolean;
+  constructor(private activeRouter: ActivatedRoute, private router: Router, private orderService: OrderService) { 
     if (this.checkout === undefined) {
       this.checkout = new Checkout();
     }
@@ -24,15 +26,12 @@ export class CheckoutComponent implements OnInit {
   }
 
   submitOrder() {
-    // Submit order to backend.
-    console.log(this.checkout);
-    this.http.post("http://localhost:8080/order/new", this.checkout).subscribe(response => {
-      console.log('uploaded.');
-      this.router.navigateByUrl("/");
-    },
-  err => {
-    console.log('Error.');
-    this.router.navigateByUrl("/");
-  });
+    this.orderService.createOrder(this.checkout, (error, result) => {
+      if (error) {
+        this.checkoutError = true;
+      } else {
+      this.checkoutError = false;
+      }
+    });
   }
 }
