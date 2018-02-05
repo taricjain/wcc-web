@@ -4,7 +4,13 @@ import { Http } from '@angular/http';
 
 import { FacebookService, InitParams, LoginResponse, LoginOptions } from 'ngx-facebook';
 import { Response } from '@angular/http/src/static_response';
-var accessToken: string;
+import { AsyncLocalStorage } from 'angular-async-local-storage';
+
+interface User {
+  name: string;
+  email: string;
+  accessToken: string;
+}
 
 @Component({
   selector: 'app-login',
@@ -13,7 +19,8 @@ var accessToken: string;
 })
 
 export class LoginComponent implements OnInit { 
-  constructor(private fb: FacebookService) {
+
+  constructor(private fb: FacebookService, protected localStorage: AsyncLocalStorage) {
     console.log('Initializing Facebook');
     let initParams: InitParams = {
       appId: '1951970428387803',
@@ -36,9 +43,6 @@ export class LoginComponent implements OnInit {
       .catch((error: any) => console.error(error));
   }
 
-  /**
-   * Get the user's profile
-   */
   getProfile() {
     this.fb.api('/me', 'get', {'fields': 'name,email'})
       .then((res: any) => {
@@ -47,10 +51,6 @@ export class LoginComponent implements OnInit {
       .catch((error: any) => console.error(error));
   }
 
-
-  /**
-   * Get the users friends
-   */
   getFriends() {
     this.fb.api('/me/friends', 'get')
       .then((res: any) => {
