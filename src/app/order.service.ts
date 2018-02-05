@@ -18,7 +18,8 @@ export class OrderService {
       orderCheckout.user.mobileNumber !== undefined &&
       orderCheckout.user.mobileNumber.length > 0) {
       
-      this.httpService.post("http://localhost:8080/order/new", orderCheckout)
+      var resourceString: string = environment.BASE_API_URL + "/order/new/";
+      this.httpService.post(resourceString, orderCheckout)
       .subscribe((response) => callback(null, response), (err) => callback(err));
       return;
     }
