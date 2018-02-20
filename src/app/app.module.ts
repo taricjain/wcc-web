@@ -10,6 +10,7 @@ import { UserModule } from './user/user.module';
 import { AdminModule } from './admin/admin.module';
 import { FacebookModule } from 'ngx-facebook';
 import { OrderService } from './order.service';
+import { AdminService } from './admin.service';
 
 @NgModule({
   declarations: [],
@@ -23,7 +24,8 @@ import { OrderService } from './order.service';
     FacebookModule.forRoot()
   ],
   providers: [
-    OrderService
+    OrderService,
+    AdminService
   ],
   bootstrap: [AppComponent]
 })

@@ -1,9 +1,10 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, OnChanges } from '@angular/core';
 import { Router } from '@angular/router';
 import { Http } from '@angular/http';
 
 import { FacebookService, InitParams, LoginResponse, LoginOptions } from 'ngx-facebook';
 import { Response } from '@angular/http/src/static_response';
+import { AdminService } from '../../admin.service';
 var accessToken: string;
 
 @Component({
@@ -13,7 +14,9 @@ var accessToken: string;
 })
 
 export class LoginComponent implements OnInit { 
-  constructor(private fb: FacebookService) {
+  private username: string;
+  private password: string;
+  constructor(private fb: FacebookService, private adminService: AdminService, private router: Router) {
     console.log('Initializing Facebook');
     let initParams: InitParams = {
       appId: '1951970428387803',
@@ -59,4 +62,10 @@ export class LoginComponent implements OnInit {
       .catch((error: any) => console.error(error));
   }
   ngOnInit() {}
+
+  postLogin(username: string, password: string) {
+    this.adminService.loginAdmin(username, password, (err, admin) => {
+      this.router.navigate(["/"]);
+    });
+  }
 }

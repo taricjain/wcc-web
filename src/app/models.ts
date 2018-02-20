@@ -49,3 +49,9 @@ export class User {
 export interface CallbackInterface {
     (error: Error, result?: any) : void;
 }
+
+export interface Admin {
+    uuid: string
+    username: string
+    perms: Array<String>
+}
