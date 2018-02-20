@@ -14,8 +14,8 @@ var accessToken: string;
 })
 
 export class LoginComponent implements OnInit { 
-  private username: string;
-  private password: string;
+  public username: string;
+  public password: string;
   constructor(private fb: FacebookService, private adminService: AdminService, private router: Router) {
     console.log('Initializing Facebook');
     let initParams: InitParams = {
