@@ -3,6 +3,16 @@
     overflow: auto;
     margin: auto;
 }
+.grid {
+    grid-template-columns: (auto-fill, 1fr);
+    grid-gap: 10px;
+    display: grid;
+}
+
+.card:hover {
+    
+}
+
 .list-buy {
     padding-top: 5em;  
 }
